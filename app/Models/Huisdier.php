@@ -13,4 +13,5 @@ class Huisdier extends Model
     }
     
     protected $table = "huisdier";
+    
 }

@@ -17,10 +17,22 @@ use Illuminate\Support\Facades\Route;
 #Front-end testing
 Route::get('/', [\App\Http\Controllers\HuisdierController::class, 'index']);
 Route::get('/collectie', [\App\Http\Controllers\HuisdierController::class, 'index']);
-Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
 
-Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
+Route::middleware('auth')->group(function () {
+    Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
+    
+    Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
+});
 
+
+#Not logged in
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+require __DIR__.'/auth.php';
 
 /*
 #Admin-account logged in
@@ -46,11 +58,3 @@ Route::middleware('auth')->group(function () {
 
 */
 
-#Not logged in
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-
-require __DIR__.'/auth.php';
