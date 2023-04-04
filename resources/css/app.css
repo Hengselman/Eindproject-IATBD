@@ -1,3 +1,99 @@
-@tailwind base;
+/*@tailwind base;
 @tailwind components;
 @tailwind utilities;
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: inherit;
+    font-size: 62.5%;
+    color: black;
+}
+
+:root{
+    --background-main: #fff7a0;
+    --background-extra: #A1C349;
+    --primary: #243010;
+    --secondary: #87A330;
+}
+
+body{
+    background-color: var(--background-main);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300%;
+    width: 100%;
+    height: 100%;
+}
+
+.form--parent{
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.form--wrapper{
+    max-height: 75vh;
+    max-width: 75%;
+    display: grid;
+    border: 1px solid red;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.form--div{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.form--div > input{
+    max-width: 100%;
+    appearance: none;
+    outline: 0;
+    border: 1px solid fade(white, 40%);
+    background-color: fade(white, 20%);
+    border-radius: 3px;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    transition-duration: 0.25s;
+}
+
+.form--div > input:hover{
+    background-color: fade(white, 40%);
+}
+
+.form--div > input:focus{
+    background-color: white;
+}
+
+.form--div--button{
+    appearance: none;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    padding: 10px 15px;
+    color: black;
+    border-radius: 3px;
+    width: 250px;
+    cursor: pointer;
+    font-size: 2rem;
+    transition-duration: 0.25s;
+    opacity: 0.75;
+    text-align: center;
+}
+
+.form--div--button:hover{
+    opacity: 1;
+}

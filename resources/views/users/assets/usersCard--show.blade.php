@@ -7,9 +7,11 @@
     <section class="usersCard__houseText">
         <p>{{$user->house_description}}</p>
     </section>
+    @foreach
         <section class="usersCard__petText">
             <h3 class="usersCard__petName">{{$huisdier->name}}</h3>
             <p class="usersCard__petDescription">{{$huisdier->description}}</p>
             <p class="usersCard__prices"></p>
         </section>
+    @endforeach
 </article>
