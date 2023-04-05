@@ -10,7 +10,7 @@
 </head>
 <body>
     <section class="navbar">
-        <figure><img src="img/icon_hamburger.png" alt="" href="javascript:void(0);" class="navbar__hamburger" onclick="showNavbar()"></figure>
+        <figure><img src="../img/icon_hamburger.png" alt="" href="javascript:void(0);" class="navbar__hamburger" onclick="showNavbar()"></figure>
         <ul class="navbar__ul" id="navbar__links">
             <li class="navbar__li"><a href="/collectie">Alle huisdieren</a></li>
             <li class="navbar__li"><a onclick="randomHuisdier()" id="randomID" href="">Bekijk een willekeurig huisdier</a></li>

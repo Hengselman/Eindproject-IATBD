@@ -19,8 +19,11 @@ Route::get('/', [\App\Http\Controllers\HuisdierController::class, 'index']);
 Route::get('/collectie', [\App\Http\Controllers\HuisdierController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
+    Route::get('/collectie/create', [\App\Http\Controllers\HuisdierController::class, 'create'])->name('collectie.store');
+    Route::post('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'store']);
     
+    Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
+
     Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
 });
 

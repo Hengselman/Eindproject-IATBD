@@ -15,9 +15,9 @@
 
             <!-- Password -->
             <div class="form--div">
-                <x-input-label for="password" :value="__('Password')" />
+                <x-input-label for="password" :value="__('Wachtwoord')" />
 
-                <x-text-input id="password" class="block mt-1 w-full"
+                <x-text-input id="password" class=""
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />
@@ -26,21 +26,21 @@
 
             <!-- Remember Me -->
             <div class="form--div">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                <label for="remember_me" class="">
+                    <input id="remember_me" type="checkbox" class="" name="remember">
+                    <span class="">Wachtwoord onthouden</span>
                 </label>
             </div>
 
             <div class="form--div">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('Wachtwoord vergeten?') }}
                     </a>
                 @endif
 
                 <x-primary-button class="form--div form--div--button">
-                    {{ __('Log in') }}
+                    {{ __('Aanmelden') }}
                 </x-primary-button>
             </div>
         </form>

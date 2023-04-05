@@ -7,3 +7,20 @@ function showNavbar() {
       x.style.display = "block";
     }
   }
+
+/* ----- Filter functie ------- */
+let allCheckboxes = document.querySelectorAll(".filter__checkbox");
+
+
+
+function filterCheck() {
+
+
+}
+
+
+/* ----- Buttons ------ */
+function oppassenButton() {
+    href.location = "/collectie"
+    return location
+}
