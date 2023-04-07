@@ -11,10 +11,10 @@ html{
 }
 
 :root{
-    --background-main: #fff7a0;
-    --background-extra: #A1C349;
-    --primary: #243010;
-    --secondary: #87A330;
+    --background-main: #AAAE8E;
+    --background-extra: #3A606E;
+    --primary: #607B7D;
+    --secondary: #;
 }
 
 body{
@@ -27,15 +27,18 @@ body{
 .navbar{
     overflow: hidden;
     background-color: var(--background-extra);
-    position: relative;
-    z-index: 1;
+    z-index: 0;
+    width: 100%;
+}
+
+.navbar__figure{
 }
 
 .navbar__hamburger{
     display: block;
-    padding: 2rem 2rem;
     font-size: 1rem;
-    z-index: 2;
+    margin: 2vh;
+    height: 4vh;
 }
 
 .navbar__ul{
@@ -43,20 +46,56 @@ body{
 }
 
 .navbar__li{
-    margin: 1rem;
     transition: 0.2s;
+    font-size: 2rem;
+    font-weight: 200;
+    list-style-type: none;
+    margin: 1rem 0 1rem 2vh;
 }
 
 .navbar__li > a{
     text-decoration: none;
-	padding: 0.2rem 1rem;
-    margin: 2rem;
+    color: black;
     border-radius: 2px;
 }
 
 .navbar__li:hover{
-    padding: 0.2rem 1.2rem;
+   
 }
+
+@media(min-width: 700px){
+    .navbar__figure{
+        display: none;
+    }
+
+    .navbar__ul{
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5rem;
+        margin: 1rem 1rem;
+        justify-content: space-between;
+        row-gap: 1rem;
+    }
+
+    .navbar__li{
+        height: 100%;
+        margin: 0;
+    }
+
+    .navbar__li > a{
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Animation test */
+    .navbar__li >a:hover{
+        color: white;
+    }
+}
+
+
 
 /* ---------- Filter -------- */
 .filter__wrapper{
@@ -74,11 +113,16 @@ body{
 
 
 /* ----- Huisdier card ------- */
+.huisdierGridCard__container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1,minmax(0,1fr));
+    row-gap: 5rem;
+}
+
 .huisdierGridCard{
     width: 80%;
     height: 100%;
-    background-color: var(--background-extra);
-    padding: 1rem;
     justify-self: center;
 }
 
@@ -90,9 +134,10 @@ body{
 .huisdierGridCard__header{
     width: 100%;
     height: 20%;
-    background-color: var(--secondary);
-    border-radius: 1rem;
+    background-color: var(--background-extra);
     padding: 0.5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 .huisdierGridCard__heading{
@@ -102,24 +147,32 @@ body{
 .huisdierGridCard__figure{
     width: 100%;
     height: 60%;
+    font-size: 0; /*Verwijdert 4px extra die worden meegegeven. */
 }
 
 .huisdierGridCard__image{
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 .huisdierGridCard__textSection{
     width: 100%;
     height: 20%;
-    background-color: var(--secondary);
+    background-color: var(--background-extra);
+    text-align: center;
+    padding: 2rem;
 }
 
 .huisdierGridCard__text{
 
 }
 
+@media(min-width: 700px){
+    .huisdierGridCard__container{
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        row-gap: 5rem;
+    }
+}
 
 
 
@@ -255,13 +308,6 @@ body{
 
 
 /*-----------Utilities-------------*/
-.u-grid-1{
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(1,minmax(0,1fr));
-    row-gap: 1rem;
-}
-
 .u-list-none{
     list-style: none;
 }
