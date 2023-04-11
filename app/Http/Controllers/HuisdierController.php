@@ -42,8 +42,6 @@ class HuisdierController extends Controller
 
         $huisdier->image = $request->file('image')->store('img', 'public');
 
-        $huisdier->zoekt_oppas = $request->input("zoekt_oppas");
-
         $huisdier->wanneer = $request->input('wanneer');
         $huisdier->hoeveel_dagen = $request->input('hoeveel_dagen');
         $huisdier->uurtarief = $request->input('uurtarief');

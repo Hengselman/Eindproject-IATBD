@@ -37,13 +37,14 @@
             @enderror
         </div>
 
-        <!-- Zoekt oppas? -->
+        <!-- Later toevoegen
+         Zoekt oppas?
         <div class="form__div form__radio">
             <input type="radio" id="zoektOppasTrue" name="zoekt_oppas" value="zoekOppasTrue" checked><label for="zoektOppasTrue">Ik zoek een oppas!</label>
             <input type="radio" id="zoektOppasFalse" name="zoekt_oppas"><label for="zoektOppasFalse">Ik zoek nog geen oppas.</label>
         </div>
+                -->
 
-        @if(True === True)
         <!-- Wanneer -->
         <div class="form__div">
             <span>Wanneer heeft u de oppas nodig?</span>
@@ -67,7 +68,6 @@
             <span>Heeft u nog andere belangrijke info die u kwijt wilt? Een allergie of eetgewoontes bijv.</span>
             <textarea name="belangrijke_info" id="belangrijke_info" cols="30" rows="10"></textarea>
         </div>
-        @endif
 
 
         <div class="form__div">
