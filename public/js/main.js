@@ -14,10 +14,8 @@ let list_of_huisdier = document.getElementsByTagName("li");
 var RandomHuisdierId = document.getElementById("RandomHuisdierId");
 
 function randomHuisdier() {
-  console.log("Random huisdier aangeklikt.");
-  let randomCijfer = Math.floor(Math.random() * list_of_huisdier.length + 1);
-  console.log(randomCijfer);
-  RandomHuisdierId.setAttribute("href", ("/collectie/" + randomCijfer));
+    let randomCijfer = Math.floor(Math.random() * list_of_huisdier.length + 1);
+    RandomHuisdierId.setAttribute("href", ("/collectie/" + randomCijfer));
 }
 
 
@@ -33,90 +31,90 @@ let allCheckboxes = document.querySelectorAll("input.filter__checkbox:checked")
 
 
 
-hondCheckbox.addEventListener("change", function(){
-    if(hondCheckbox.checked){
+    hondCheckbox.addEventListener("change", function(){
+        if(hondCheckbox.checked){
+            for(let i = 0; i < list_of_huisdier.length; i++){
+                if (list_of_huisdier[i].dataset.huisdierSoort == "Hond"){
+                    list_of_huisdier[i].style.display = "";
+                }
+            }
+        }
+        else{
+            for(let i = 0; i < list_of_huisdier.length; i++){
+                if (list_of_huisdier[i].dataset.huisdierSoort == "Hond"){
+                    list_of_huisdier[i].style.display = "none";
+                }
+            }
+        }
+    });
+
+    katCheckbox.addEventListener("change", function(){
+        if(katCheckbox.checked){
+            for(let i = 0; i < list_of_huisdier.length; i++){
+                if (list_of_huisdier[i].dataset.huisdierSoort == "Kat"){
+                    list_of_huisdier[i].style.display = "";
+                }
+            }
+        }
+        else{
+            for(let i = 0; i < list_of_huisdier.length; i++){
+                if (list_of_huisdier[i].dataset.huisdierSoort == "Kat"){
+                    list_of_huisdier[i].style.display = "none";
+                }
+            }
+        }
+    });
+
+    konijnCheckbox.addEventListener("change", function(){
+    if(konijnCheckbox.checked){
         for(let i = 0; i < list_of_huisdier.length; i++){
-            if (list_of_huisdier[i].dataset.huisdierSoort == "Hond"){
+            if (list_of_huisdier[i].dataset.huisdierSoort == "Konijn"){
                 list_of_huisdier[i].style.display = "";
             }
         }
     }
     else{
         for(let i = 0; i < list_of_huisdier.length; i++){
-            if (list_of_huisdier[i].dataset.huisdierSoort == "Hond"){
+            if (list_of_huisdier[i].dataset.huisdierSoort == "Konijn"){
                 list_of_huisdier[i].style.display = "none";
             }
         }
     }
-});
+    });
 
-katCheckbox.addEventListener("change", function(){
-    if(katCheckbox.checked){
+    parkietCheckbox.addEventListener("change", function(){
+    if(parkietCheckbox.checked){
         for(let i = 0; i < list_of_huisdier.length; i++){
-            if (list_of_huisdier[i].dataset.huisdierSoort == "Kat"){
+            if (list_of_huisdier[i].dataset.huisdierSoort == "Parkiet"){
                 list_of_huisdier[i].style.display = "";
             }
         }
     }
     else{
         for(let i = 0; i < list_of_huisdier.length; i++){
-            if (list_of_huisdier[i].dataset.huisdierSoort == "Kat"){
+            if (list_of_huisdier[i].dataset.huisdierSoort == "Parkiet"){
                 list_of_huisdier[i].style.display = "none";
             }
         }
     }
-});
+    });
 
-konijnCheckbox.addEventListener("change", function(){
-  if(konijnCheckbox.checked){
-      for(let i = 0; i < list_of_huisdier.length; i++){
-          if (list_of_huisdier[i].dataset.huisdierSoort == "Konijn"){
-              list_of_huisdier[i].style.display = "";
-          }
-      }
-  }
-  else{
-      for(let i = 0; i < list_of_huisdier.length; i++){
-          if (list_of_huisdier[i].dataset.huisdierSoort == "Konijn"){
-              list_of_huisdier[i].style.display = "none";
-          }
-      }
-  }
-});
-
-parkietCheckbox.addEventListener("change", function(){
-  if(parkietCheckbox.checked){
-      for(let i = 0; i < list_of_huisdier.length; i++){
-          if (list_of_huisdier[i].dataset.huisdierSoort == "Parkiet"){
-              list_of_huisdier[i].style.display = "";
-          }
-      }
-  }
-  else{
-      for(let i = 0; i < list_of_huisdier.length; i++){
-          if (list_of_huisdier[i].dataset.huisdierSoort == "Parkiet"){
-              list_of_huisdier[i].style.display = "none";
-          }
-      }
-  }
-});
-
-visCheckbox.addEventListener("change", function(){
-  if(visCheckbox.checked){
-      for(let i = 0; i < list_of_huisdier.length; i++){
-          if (list_of_huisdier[i].dataset.huisdierSoort == "Vis"){
-              list_of_huisdier[i].style.display = "";
-          }
-      }
-  }
-  else{
-      for(let i = 0; i < list_of_huisdier.length; i++){
-          if (list_of_huisdier[i].dataset.huisdierSoort == "Vis"){
-              list_of_huisdier[i].style.display = "none";
-          }
-      }
-  }
-});
+    visCheckbox.addEventListener("change", function(){
+    if(visCheckbox.checked){
+        for(let i = 0; i < list_of_huisdier.length; i++){
+            if (list_of_huisdier[i].dataset.huisdierSoort == "Vis"){
+                list_of_huisdier[i].style.display = "";
+            }
+        }
+    }
+    else{
+        for(let i = 0; i < list_of_huisdier.length; i++){
+            if (list_of_huisdier[i].dataset.huisdierSoort == "Vis"){
+                list_of_huisdier[i].style.display = "none";
+            }
+        }
+    }
+    });
 
 
 /* ----- Buttons ------ */

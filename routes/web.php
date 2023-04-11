@@ -16,15 +16,24 @@ use Illuminate\Support\Facades\Route;
 
 #Front-end testing
 Route::get('/', [\App\Http\Controllers\HuisdierController::class, 'index']);
-Route::get('/collectie', [\App\Http\Controllers\HuisdierController::class, 'index']);
+Route::get('/collectie', [\App\Http\Controllers\HuisdierController::class, 'index'])->name('collectie.index');;
 
 Route::middleware('auth')->group(function () {
-    Route::get('/collectie/create', [\App\Http\Controllers\HuisdierController::class, 'create'])->name('collectie.store');
-    Route::post('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'store']);
+    Route::get('/collectie/create', [\App\Http\Controllers\HuisdierController::class, 'create']);
+    Route::post('/collectie', [\App\Http\Controllers\HuisdierController::class, 'store'])->name('collectie.store');;
     
     Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
 
     Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+});
+
+Route::middleware(['auth','admin'])->group(function () {
+    Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
+    
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 

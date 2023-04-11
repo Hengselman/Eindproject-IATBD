@@ -5,7 +5,7 @@
                 <h2 class="huisdierGridCard__heading"> {{$huisdier->name}}</h2>
             </header>
             <figure class="huisdierGridCard__figure">
-                <img class="huisdierGridCard__image" src="{{$huisdier->image}}" alt="{{$huisdier->name}} de {{$huisdier->soort}}">
+                <img class="huisdierGridCard__image" src="{{ asset('storage/').'/'.$huisdier->image}}" alt="{{$huisdier->name}} de {{$huisdier->soort}}">
             </figure>
             <section class="huisdierGridCard__textSection">
                 <p class="huisdierGridCard__text"> {{$huisdier->description}}</p>

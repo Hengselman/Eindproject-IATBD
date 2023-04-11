@@ -13,5 +13,7 @@ class Huisdier extends Model
     }
     
     protected $table = "huisdier";
+
+    public $timestamps = false;
     
 }

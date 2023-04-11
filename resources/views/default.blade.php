@@ -15,7 +15,13 @@
             <li class="navbar__li"><a href="/collectie">Alle huisdieren</a></li>
             <li class="navbar__li"><a onclick="randomHuisdier()" id="RandomHuisdierId" href="">Bekijk een willekeurig huisdier</a></li>
             <li class="navbar__li"><a href="/collectie/create">Voeg een huisdier toe</a></li>
-            <li class="navbar__li"><a href="/dashboard">Profiel</a></li>
+            @if (Route::has('login'))
+                @auth
+                    <li class="navbar__li"><a href="/dashboard">Profiel</a></li>
+                @else
+                    <li class="navbar__li"><a href="/login">Login</a></li>
+                @endauth
+            @endif
         </ul>
     </section>
     @yield('content')

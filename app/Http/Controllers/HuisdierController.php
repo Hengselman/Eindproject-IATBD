@@ -10,7 +10,8 @@ class HuisdierController extends Controller
 {
     public function index(){
         return view('collectie.index',[
-            'huisdier' => \App\Models\Huisdier::all()
+            'huisdier' => \App\Models\Huisdier::all(),
+            'huisdier' => \App\Models\Huisdier::where('zoekt_oppas',1)->get()
         ]);
     }
 
@@ -21,35 +22,41 @@ class HuisdierController extends Controller
     }
 
     public function create(){
-        return view('collectie.create');
+        return view('collectie.create',[
+            'huisdier' => \App\Models\Huisdier::all()
+        ]);
     }
 
     public function store(Request $request, \App\Models\Huisdier $huisdier){
         $huisdier->name = $request->input('name');
         $huisdier->soort = $request->input('soort');
         $huisdier->description = $request->input('description');
+        $huisdier->eigenaar_id = $request->user()->id;
+        $huisdier->eigenaar_name = $request->user()->name;
+       
+        /* Image validation */
 
-        /* Validate Image */
         $this->validate($request, [
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,webp|max:2048',
         ]);
 
-        $huisdier->image = $request->file('image')->store('image', 'public');
+        $huisdier->image = $request->file('image')->store('img', 'public');
 
-        /*$data = Image::create([
-            'image' => $image_path,
-        ]); */
+        $huisdier->zoekt_oppas = $request->input("zoekt_oppas");
 
-        session()->flash('success', 'Image Upload successfully');
-
-        /*$huisdier->image = $request->input('image');*/
-
+        $huisdier->wanneer = $request->input('wanneer');
+        $huisdier->hoeveel_dagen = $request->input('hoeveel_dagen');
+        $huisdier->uurtarief = $request->input('uurtarief');
+        $huisdier->belangrijke_info = $request->input('belangrijke_info');
+        
         try{
             $huisdier->save();
-            return redirect('/');
+            return redirect('/collectie');
         }
         catch(Exception $e){
+            error_log("Werkt niet");
             return redirect('/collectie/create');
         }
+        
     }
 }
