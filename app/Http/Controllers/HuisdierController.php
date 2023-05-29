@@ -18,6 +18,7 @@ class HuisdierController extends Controller
     public function show($id){
         return view('collectie.show',[
             'huisdier' => \App\Models\Huisdier::find($id),
+            'user' => Auth::user()
         ]);
     }
 
@@ -26,6 +27,13 @@ class HuisdierController extends Controller
             'huisdier' => \App\Models\Huisdier::all()
         ]);
     }
+
+    public function destroy($id){
+        $huisdier = \App\Models\Huisdier::where('id', $id)->firstorfail()->delete();
+        echo ("Huisdier succesvol verwijdert");
+        return redirect()->route('collectie.index');
+    }
+
 
     public function store(Request $request, \App\Models\Huisdier $huisdier){
         $huisdier->name = $request->input('name');

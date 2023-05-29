@@ -17,7 +17,7 @@
             <li class="navbar__li"><a href="/collectie/create">Voeg een huisdier toe</a></li>
             @if (Route::has('login'))
                 @auth
-                    <li class="navbar__li"><a href="/dashboard">Profiel</a></li>
+                    <li class="navbar__li"><a href="{{ route('users.show', ['id' => auth()->user()->id]) }}">Profiel</a></li>
                 @else
                     <li class="navbar__li"><a href="/login">Login</a></li>
                 @endauth

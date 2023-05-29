@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HuisdierController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,14 +26,17 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
 
-    Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
+    Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show'])->name('users.show');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 });
 
 Route::middleware(['auth','admin'])->group(function () {
-    Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
-    
+    Route::get('/users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    Route::delete('/users/{id}', '\App\Http\Controllers\UserController@destroy')->name('users.destroy');
+
+    Route::delete('/collectie/{id}', '\App\Http\Controllers\HuisdierController@destroy')->name('collectie.destroy');
+
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
