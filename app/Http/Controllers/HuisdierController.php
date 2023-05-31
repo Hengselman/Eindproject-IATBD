@@ -5,37 +5,43 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Exception;
+use App\Models\Huisdier;
 
 class HuisdierController extends Controller
 {
     public function index(){
         return view('collectie.index',[
-            'huisdier' => \App\Models\Huisdier::all(),
-            'huisdier' => \App\Models\Huisdier::where('zoekt_oppas',1)->get()
+            'huisdier' => Huisdier::all(),
+            'huisdier' => Huisdier::where('zoekt_oppas',1)->get()
         ]);
     }
 
     public function show($id){
+
+        $huisdier = Huisdier::findOrFail($id);
+        $reviews = $huisdier->reviews()->get();
+
         return view('collectie.show',[
-            'huisdier' => \App\Models\Huisdier::find($id),
-            'user' => Auth::user()
+            'huisdier' => $huisdier,
+            'user' => Auth::user(),
+            'reviews' => $reviews
         ]);
     }
 
     public function create(){
         return view('collectie.create',[
-            'huisdier' => \App\Models\Huisdier::all()
+            'huisdier' => Huisdier::all()
         ]);
     }
 
     public function destroy($id){
-        $huisdier = \App\Models\Huisdier::where('id', $id)->firstorfail()->delete();
+        $huisdier = Huisdier::where('id', $id)->firstorfail()->delete();
         echo ("Huisdier succesvol verwijdert");
         return redirect()->route('collectie.index');
     }
 
 
-    public function store(Request $request, \App\Models\Huisdier $huisdier){
+    public function store(Request $request, Huisdier $huisdier){
         $huisdier->name = $request->input('name');
         $huisdier->soort = $request->input('soort');
         $huisdier->description = $request->input('description');

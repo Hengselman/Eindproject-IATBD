@@ -493,6 +493,11 @@ text-align: center;
     list-style: none;
 }
 
+.u-text-dec-none{
+    text-decoration: none;
+    color: black;
+}
+
 /*---------Animations--------*/
 .a-popup{
     animation-name: popup;

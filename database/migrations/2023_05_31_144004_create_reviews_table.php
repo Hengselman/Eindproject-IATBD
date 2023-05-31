@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('aanmeldingen', function (Blueprint $table) {
-            $table->unsignedBigInteger("gebruiker_id");
-            $table->unsignedBigInteger("huisdier_id");
-
-            $table->foreign('gebruiker_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('huisdier_id');
             $table->foreign('huisdier_id')->references('id')->on('huisdier')->onDelete('cascade');
+            $table->string('reviewer_name');
+            $table->text('review_text');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aanmeldingen');
+        Schema::dropIfExists('reviews');
     }
 };

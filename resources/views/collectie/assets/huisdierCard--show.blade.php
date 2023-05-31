@@ -19,7 +19,12 @@
         <p class="huisdierCard__text">{{$huisdier->description}}</p>
     </section>
     <section class="huisdierCard__sectionButton">
-        <button class="huisdierCard__button huisdierCard__oppassen" onclick="oppassenButton()">Ik wil graag oppassen!</button>
+        <form action="{{ route('aanmeldingen.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="user_id" value="{{Auth::id() }}">
+            <input type="hidden" name="huisdier_id" value="{{ $huisdier->id }}">
+            <button type="submit" class="huisdierCard__button huisdierCard__oppassen">Ik wil graag oppassen!</button>
+        </form>
         <a href="/users/{{$huisdier->eigenaar_id}}"><button class="huisdierCard__button huisdierCard__baasje">Ontmoet het baasje!</button></a>
     </section>
 </article>

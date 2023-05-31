@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aanmelding extends Model
 {
-    protected $fillable = ['gebruiker_id', 'huisdier_id'];
+    protected $table = 'aanmeldingen';
+    protected $fillable = ['user_id', 'huisdier_id'];
+
+    public $timestamps = true;
 
     public function user()
     {

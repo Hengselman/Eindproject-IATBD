@@ -25,10 +25,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/collectie', [\App\Http\Controllers\HuisdierController::class, 'store'])->name('collectie.store');;
     
     Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
+    Route::post('/collectie', '\App\Http\Controllers\AanmeldController@store')->name('aanmeldingen.store');
+    Route::post('/collectie/{id}', '\App\Http\Controllers\ReviewController@store')->name('reviews.store');
+
 
     Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show'])->name('users.show');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/users/{id}', '\App\Http\Controllers\AanmeldController@refuse')->name('aanmeldingen.refuse');
+    Route::patch('/users/{id}', '\App\Http\Controllers\AanmeldController@accept')->name('aanmeldingen.accept');
+
 });
 
 Route::middleware(['auth','admin'])->group(function () {
