@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Aanmelding extends Model
 {
     protected $table = 'aanmeldingen';
-    protected $fillable = ['user_id', 'huisdier_id'];
+    protected $fillable = ['user_id', 'huisdier_id', 'eigenaar_id'];
 
     public $timestamps = true;
 

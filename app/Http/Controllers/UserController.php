@@ -17,19 +17,15 @@ class UserController extends Controller
     }
     
     public function show($id){
-        $huisdierVar = Huisdier::where('eigenaar_id', $id)->value('name');
-        $huisdierTest1 = "Test";
-
+        $user = User::findOrFail($id);
+        $request = Aanmelding::where('eigenaar_id', $id)->get();
 
 
         return view('users.show',[
             'user' => User::find($id),
             'huisdier' => Huisdier::where('eigenaar_id',$id)->get(),
             'currentUser' => Auth::user(),
-            'aanmelding' => Aanmelding::where('user_id', $id)->get(),
-            'huisdierVar' => $huisdierVar,
-            'huisdierTest1' => $huisdierTest1,
-
+            'aanmelding' => $request,
         ]);
     }
 

@@ -16,6 +16,11 @@ class Huisdier extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function aanmeldingen()
+    {
+        return $this->hasMany(Aanmelding::class);
+    }
     
     protected $table = "huisdier";
 

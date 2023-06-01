@@ -12,7 +12,7 @@
     <h2 class="usersCard__huisdierenH2">Alle reviews over {{$huisdier->name}}:</h2>
     
     @if ($reviews->isEmpty())
-    <p>No reviews yet.</p>
+    <p class="u-text-center">Wees de eerste die een review achterlaat!</p>
     @else
         @foreach($reviews as $review)
             @include('collectie.assets.huisdierCard--review')

@@ -30,7 +30,7 @@
 
         <!-- Image -->
         <div class="form__div">
-            <span>Kies een foto uit</span>
+            <span>Kies een foto uit:</span>
             <input class="form__div__filebutton" type="file" name="image">
             @error('image')
             <span>{{ $message }}</span>
@@ -71,7 +71,7 @@
 
 
         <div class="form__div">
-        <input class="form__div form__div__button" type="submit" value="Huisdier aanmaken">
+        <input class="form__div form__div__button huisdierCard__button" type="submit" value="Huisdier aanmaken">
         </div>
     </form>
 </div>

@@ -3,7 +3,7 @@
         <h1 class="usersCard__title">{{$user->name}}</h1>
         @if($currentUser->role == 'Admin')
         <button type="submit" class="huisdierCard__button">
-            <a href="{{ route('users.index') }}" onclick="event.preventDefault(); document.getElementById('delete-form-{{$user->id}}').submit();">Verwijder gebruiker</a>
+            <a class="u-text-dec-none" href="{{ route('users.index') }}" onclick="event.preventDefault(); document.getElementById('delete-form-{{$user->id}}').submit();">Verwijder gebruiker</a>
         </button>
         <form id="delete-form-{{$user->id}}" + action="{{route('users.destroy', $user->id)}}" method="post">
             @csrf

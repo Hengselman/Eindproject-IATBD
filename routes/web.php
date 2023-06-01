@@ -29,10 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
     Route::post('/collectie/{id}', '\App\Http\Controllers\ReviewController@store')->name('reviews.store');
 
+    Route::delete('/aanmeldingen/{id}', '\App\Http\Controllers\AanmeldController@destroy')->name('aanmeldingen.destroy');
+    Route::patch('/aanmeldingen/{id}', '\App\Http\Controllers\AanmeldController@accept')->name('aanmeldingen.accept');
 
     Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show'])->name('users.show');
-    Route::post('/users/{id}', '\App\Http\Controllers\AanmeldController@refuse')->name('aanmeldingen.refuse');
-    Route::patch('/users/{id}', '\App\Http\Controllers\AanmeldController@accept')->name('aanmeldingen.accept');
 
 });
 
@@ -41,9 +41,6 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::delete('/users/{id}', '\App\Http\Controllers\UserController@destroy')->name('users.destroy');
 
     Route::delete('/collectie/{id}', '\App\Http\Controllers\HuisdierController@destroy')->name('collectie.destroy');
-
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 
