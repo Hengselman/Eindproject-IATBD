@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("soort");
             $table->foreign("soort")->references("soort")->on("huisdier_soorten");
-            $table->string("image")->default("/img/huisdier_default.jpg");
+            $table->string("image")->default("/img/huisdier_default.webp");
             $table->string("description");
             $table->unsignedBigInteger("eigenaar_id")->default('1');
             $table->foreign("eigenaar_id")->references("id")->on("users")->onDelete('cascade');

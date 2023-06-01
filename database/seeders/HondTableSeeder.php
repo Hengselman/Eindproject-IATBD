@@ -18,7 +18,7 @@ class HondTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => 'Elouise',
             'soort' => "Hond",
-            'image' => '/img/hond_elouise.jpg',
+            'image' => '/img/hond_elouise.webp',
             'description' => "Elouise is een erg rustige hond. Ze kan goed overweg met andere honden en slaapt graag in haar zachte mand.",
             'eigenaar_id' => 2
         ]);
@@ -26,7 +26,7 @@ class HondTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => 'Hendrik',
             'soort' => "Hond",
-            'image' => '/img/hond_hendrik.jpg',
+            'image' => '/img/hond_hendrik.webp',
             'description' => "Hendrik is een jonge hond van 5 maanden. Hij is erg enthousiast met speeltjes en moet nog leren omgaan met kinderen.",
             'eigenaar_id' => 2
         ]);
@@ -34,7 +34,7 @@ class HondTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => 'Chappo',
             'soort' => "Hond",
-            'image' => '/img/hond_chappo.jpg',
+            'image' => '/img/hond_chappo.webp',
             'description' => "Chappo speelt graag met zijn knuffels en botjes. Hij vindt het ook heerlijk om los te rennen in het bos.",
             'eigenaar_id' => 2
         ]);
@@ -42,7 +42,7 @@ class HondTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => 'Bianca',
             'soort' => "Hond",
-            'image' => '/img/hond_bianca.jpg',
+            'image' => '/img/hond_bianca.webp',
             'description' => "Bianca is er als eerste bij wanneer iemand wilt gaan wandelen. Het liefst rent ze de hele dag buiten. Een erg energieke hond dus!",
             'eigenaar_id' => 2
         ]);
@@ -50,7 +50,7 @@ class HondTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => 'Boris',
             'soort' => "Hond",
-            'image' => '/img/hond_boris.jpg',
+            'image' => '/img/hond_boris.webp',
             'description' => "Boris is de perfecte hond rond kinderen. Erg speels maar hij weet dat hij bij sommige kinderen iets rustiger moet zijn. Een hond waar ieder kind van kan houden!",
             'eigenaar_id' => 2
         ]);

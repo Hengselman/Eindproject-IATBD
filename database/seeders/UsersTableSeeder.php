@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'Devin.voorbeeld@gmail.com',
             'password' => bcrypt("password"),
             'role' => 'Admin',
-            'profile_image' => 'img/atleet_devin.jpg',
+            'profile_image' => 'img/atleet_devin.webp',
             'profile_info' => 'Hoi ik ben Devin. Ik ben in het dagelijks leven een full-time atleet dus heb soms een oppas nodig voor mijn lieve beessies.'
         ]);
 
@@ -34,14 +34,14 @@ class UsersTableSeeder extends Seeder
             'name' => 'Testpersoon3',
             'email' => 'testpersoon3@gmail.com',
             'password' => bcrypt("password"),
-            'profile_image' => 'img/testpersoon3.jpg',
+            'profile_image' => 'img/testpersoon3.webp',
         ]);
 
         DB::table("users")->insert([
             'name' => 'Testpersoon4',
             'email' => 'testpersoon4@gmail.com',
             'password' => bcrypt("password"),
-            'profile_image' => 'img/testpersoon4.jpg',
+            'profile_image' => 'img/testpersoon4.webp',
         ]);
     }
 }

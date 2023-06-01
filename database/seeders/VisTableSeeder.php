@@ -18,7 +18,7 @@ class VisTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => "Axel",
             'soort' => "Vis",
-            'image' => '/img/vis_axel.jpg',
+            'image' => '/img/vis_axel.webp',
             'description' => "Een lief beessie. Kan heel lief naar je lachen vanuit zijn aquarium.",
             'eigenaar_id' => 3
         ]);
@@ -26,7 +26,7 @@ class VisTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => "Blacka",
             'soort' => "Vis",
-            'image' => '/img/vis_blacka.jpg',
+            'image' => '/img/vis_blacka.webp',
             'description' => "Blacka is een hele speciale vis omdat zijn broertjes allemaal niet zwart waren.",
             'eigenaar_id' => 4
         ]);
@@ -34,7 +34,7 @@ class VisTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => "Blub",
             'soort' => "Vis",
-            'image' => '/img/vis_blub.jpg',
+            'image' => '/img/vis_blub.webp',
             'description' => "Blub houdt van bubbeltjes.",
             'eigenaar_id' => 4
         ]);
@@ -42,7 +42,7 @@ class VisTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => "Nemo",
             'soort' => "Vis",
-            'image' => '/img/vis_nemo.jpg',
+            'image' => '/img/vis_nemo.webp',
             'description' => "Ik weet het, een erg originele naam. Maar de naam is heel leuk en hij deze vis is niet kwijt!",
             'eigenaar_id' => 4
         ]);
@@ -50,7 +50,7 @@ class VisTableSeeder extends Seeder
         DB::table("huisdier")->insert([
             'name' => "Tijgertje",
             'soort' => "Vis",
-            'image' => '/img/vis_tijgertje.jpg',
+            'image' => '/img/vis_tijgertje.webp',
             'description' => "Tijgertje houdt van stoeien op het strand of in het zwembad. Niet de deur open laten staan want dan rent hij weg!",
             'eigenaar_id' => 1
         ]);
