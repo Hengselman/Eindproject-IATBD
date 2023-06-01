@@ -22,15 +22,15 @@ Route::get('/collectie', [\App\Http\Controllers\HuisdierController::class, 'inde
 
 Route::middleware('auth')->group(function () {
     Route::get('/collectie/create', [\App\Http\Controllers\HuisdierController::class, 'create']);
-    Route::post('/collectie', [\App\Http\Controllers\HuisdierController::class, 'store'])->name('collectie.store');;
-    
-    Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
+    Route::post('/collectie/create', '\App\Http\Controllers\HuisdierController@store')->name('collectie.store');
+
     Route::post('/collectie', '\App\Http\Controllers\AanmeldController@store')->name('aanmeldingen.store');
+
+    Route::get('/collectie/{id}', [\App\Http\Controllers\HuisdierController::class, 'show']);
     Route::post('/collectie/{id}', '\App\Http\Controllers\ReviewController@store')->name('reviews.store');
 
 
     Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show'])->name('users.show');
-
     Route::post('/users/{id}', '\App\Http\Controllers\AanmeldController@refuse')->name('aanmeldingen.refuse');
     Route::patch('/users/{id}', '\App\Http\Controllers\AanmeldController@accept')->name('aanmeldingen.accept');
 

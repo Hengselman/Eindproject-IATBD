@@ -17,7 +17,6 @@ class UserController extends Controller
     }
     
     public function show($id){
-
         $huisdierVar = Huisdier::where('eigenaar_id', $id)->value('name');
         $huisdierTest1 = "Test";
 

@@ -46,7 +46,6 @@ class HuisdierController extends Controller
         $huisdier->soort = $request->input('soort');
         $huisdier->description = $request->input('description');
         $huisdier->eigenaar_id = $request->user()->id;
-        $huisdier->eigenaar_name = $request->user()->name;
        
         /* Image validation */
 

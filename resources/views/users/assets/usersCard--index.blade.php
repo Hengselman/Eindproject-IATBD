@@ -5,7 +5,7 @@
                 <h2 class="huisdierGridCard__heading"> {{$user->name}}</h2>
             </header>
             <figure class="huisdierGridCard__figure">
-                <img class="huisdierGridCard__image" src="{{ asset('storage/').'/'.$user->image}}" alt="{{$user->name}}">
+                <img class="huisdierGridCard__image" src="{{ asset('storage/').'/'.$user->profile_image}}" alt="{{$user->name}}">
             </figure>
         </article>
     </a>
