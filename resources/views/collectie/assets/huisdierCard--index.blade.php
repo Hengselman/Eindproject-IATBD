@@ -1,4 +1,4 @@
-<li class="a-bigger u-list-none huisdierGridCard" data-huisdier-soort="{{$huisdier->soort}}">
+<li class="a-bigger u-list-none huisdierGridCard a-popup" data-huisdier-soort="{{$huisdier->soort}}">
     <a href="/collectie/{{$huisdier->id}}">
         <article>
             <header class="huisdierGridCard__header u-flex-v-center">

@@ -59,10 +59,6 @@ body{
     border-radius: 2px;
 }
 
-.navbar__li:hover{
-   
-}
-
 @media(min-width: 700px){
     .navbar__figure{
         display: none;
@@ -112,6 +108,7 @@ body{
 .filter__option{
     width: 100%;
     text-align: center;
+    align-self: center;
 }
 
 .filter__checkbox{
@@ -406,17 +403,10 @@ body{
     border-radius: 50%;
 }
 
-.button__True{
-    background-color: green;
-    opacity: 0.9;
-    box-shadow: #3A606E;
-    border: blue;
+.usersCard__logout{
+    margin: 0 auto;
 }
 
-.button__False{
-    background-color: red;
-    opacity: 0.8;
-}
 /*----- User Card - Post Review -----*/
 .usersCard__postReview{
     margin: 1rem auto;
@@ -456,6 +446,65 @@ body{
     max-width: 80%;
 }
 
+/*--------Aanmeldingen----------*/
+.usersCard__aanmeldingCard{
+    border: 1px solid red;
+    background-color: #dadec1;
+    border-radius: 3rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 0.5rem;
+    max-width: 90vw;
+    margin: 2rem auto;
+    padding: 2rem;
+    align-items: center;
+}
+
+.usersCard__aanmeldingTitle{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.usersCard__aanmeldingText{
+    grid-area: 2 / 1/ 3 / 5;
+}
+
+.usersCard__formAccept{
+    grid-area: 1 / 5 / 2 / 6;
+    margin: 0 auto;
+}
+
+.usersCard__formReject{
+    grid-area: 2 / 5 / 3 / 6;
+    margin: 0 auto;
+}
+
+.button__True{
+    background-color: green;
+    opacity: 0.9;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button__True:hover{
+    padding: 1.2rem;
+}
+
+.button__False{
+    background-color: red;
+    opacity: 0.8;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button__False:hover{
+    padding:1.2rem
+}
 
 
 /* ------------Form------------*/
@@ -538,28 +587,8 @@ body{
         opacity: 0;
         transform: scale(1.05) translateY(-1rem);
     }
-    70%{
-        transform: scale(0.98);
-    }
     100%{
         opacity: 1;
         transform: scale(1);
-    }
-}
-
-.a-bigger:hover{
-    animation-name: bigger;
-    animation-duration: 0.2s;
-}
-
-@keyframes popup{
-    0%{
-        transform: scale(1.05) translateY(-1rem);
-    }
-    10%{
-        transform: scale(0.98);
-    }
-    100%{
-        transform: scale(1.1);
     }
 }
