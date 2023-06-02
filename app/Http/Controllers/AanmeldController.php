@@ -41,7 +41,11 @@ class AanmeldController extends Controller
     public function accept($id)
     {
         $aanmelding = Aanmelding::findOrFail($id);
-        Aanmelding::where('huisdier_id', $aanmelding->huisdier_id)->delete();
+        $diertje = Aanmelding::where('huisdier_id', $aanmelding->huisdier_id);
+        $huisdier = $aanmelding->huisdier;
+        $huisdier->zoekt_oppas = 0;
+        $huisdier->save();
+        $diertje->delete();
         return redirect()->route('collectie.index');
     }
 
